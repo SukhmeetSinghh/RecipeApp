@@ -1,7 +1,9 @@
-package com.cst2335.recipeapp.helper;
+package recipe.app.helper;
+
 
 import android.app.AlertDialog;
 import android.content.Context;
+
 
 public class DialogHelper {
 
@@ -16,5 +18,7 @@ public class DialogHelper {
         AlertDialog alertDialog = builder1.create();
 
         return alertDialog;
+
     }
 }
+

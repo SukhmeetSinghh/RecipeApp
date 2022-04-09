@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".screens.DetailsActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/colorprimaryDark"
+        android:background="@color/colorPrimaryDark"
         android:gravity="center_vertical">
 
         <TextView
@@ -22,7 +22,6 @@
             android:text="Details Recipe"
             android:textColor="@android:color/white"
             android:textStyle="bold" />
-
     </LinearLayout>
 
     <LinearLayout
@@ -36,13 +35,15 @@
             android:layout_weight="1"
             android:text="Id :"
             android:textStyle="bold" />
+
         <TextView
             android:id="@+id/textViewId"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="TextView" />
     </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -62,7 +63,6 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="TextView" />
-
     </LinearLayout>
 
     <LinearLayout
@@ -74,7 +74,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="fat :"
+            android:text="Fat :"
             android:textStyle="bold" />
 
         <TextView
@@ -83,26 +83,26 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="TextView" />
-
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="protein :"
-        android:textStyle="bold" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="protein :"
+            android:textStyle="bold" />
 
-    <TextView
-        android:id="@+id/textViewProtein"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Textview" />
+        <TextView
+            android:id="@+id/textViewProtein"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="TextView" />
     </LinearLayout>
 
     <Button
@@ -111,4 +111,4 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:text="Save" />
-</LinearLayout>`
+</LinearLayout>

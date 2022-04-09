@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context="com.cst2335.recipeapp.MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,64 +13,79 @@
         android:background="@color/colorPrimaryDark"
         android:gravity="center_vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:paddingLeft="10dp"
-        android:text="Favorites"
-        android:textColor="@android:color/white"
-        android:textStyle="bold"
-        android:visibility="invisible" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:text="Favorites"
+            android:textColor="@android:color/white"
+            android:textStyle="bold"
+            android:visibility="invisible" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:text="Search Recipe"
-        android:textColor="@android:color/white"
-        android:textStyle="bold" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Search Recipe"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/favorites"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:gravity="center"
+            android:paddingLeft="10dp"
+            android:text="Favorites"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
     </LinearLayout>
+
     <EditText
-        android:layout_width="wrap_content"
+        android:id="@+id/editTextSearch"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:drawableLeft="@drawable/ic_baseline_search_24"
         android:drawablePadding="5dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:paddingLeft="10dp"
-        android:drawableLeft="@drawable/ic_baseline_search_24" />
+        android:paddingLeft="10dp" />
 
     <RelativeLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical" >
+        android:gravity="center_vertical">
 
         <TextView
-            android:id="@+id/LastSearch"
+            android:id="@+id/lastSearch"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:paddingLeft="20dp"
             android:text=""
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/black" />
 
-            <ImageView
-                android:id="@+id/removeLastValue"
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="15dp"
-                android:src="@drawable/ic_cancel"
-                app:tint="@android:color/black"
+        <ImageView
+            android:id="@+id/removeLastValue"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:src="@drawable/ic_cancel"
+            app:tint="@android:color/black" />
+
     </RelativeLayout>
-<androidx.recyclerview.widget.RecyclerView
-    android:id="@+id/recycler_view"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="10dp"
-    android:clipToPadding="false"
-    android:scrollbars="vertical" />
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:clipToPadding="false"
+        android:scrollbars="vertical" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

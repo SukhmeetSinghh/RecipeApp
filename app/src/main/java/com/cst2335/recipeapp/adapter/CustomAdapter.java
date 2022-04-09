@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 import recipe.app.model.Result;
-import recipe.app.R;
+import com.cst2335.recipeapp.R;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.MyViewHolder> implements Filterable {
 

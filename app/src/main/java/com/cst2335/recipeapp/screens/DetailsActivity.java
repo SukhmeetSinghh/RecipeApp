@@ -1,6 +1,6 @@
 package com.cst2335.recipeapp.screens;
 
-import static recipe.app.network.Constant.TABLE;
+import static com.cst2335.recipeapp.network.Constant.TABLE;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,11 +12,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.cst2335.recipeapp.R;
 import com.google.gson.Gson;
 
-import recipe.app.model.Result;
-import recipe.app.R;
+import com.cst2335.recipeapp.model.Result;
+import com.cst2335.recipeapp.R;
 
 public class DetailsActivity extends AppCompatActivity {
 
@@ -25,9 +24,8 @@ public class DetailsActivity extends AppCompatActivity {
     private String buttonText;
     private Result result;
 
-
     @Override
-    protected void onCreate(Bundle savedInstanceState){
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result_details);
 
@@ -36,8 +34,8 @@ public class DetailsActivity extends AppCompatActivity {
         setClickListener();
     }
 
-    //init all widgets
-    private void initWidgets(){
+    // init all widgets
+    private void initWidgets() {
         textViewId = findViewById(R.id.textViewId);
         textViewTitle = findViewById(R.id.textViewTitle);
         textViewFat = findViewById(R.id.textViewFat);
@@ -45,12 +43,11 @@ public class DetailsActivity extends AppCompatActivity {
         buttonSave = findViewById(R.id.buttonSave);
     }
 
-    //Get data from previous activity and set into current screen
-    private void getIntentData(){
+    // get data from previous activity and set into current screen
+    private void getIntentData() {
         Intent intent = getIntent();
         result = (Result) intent.getSerializableExtra("result");
         buttonText = intent.getStringExtra("from");
-
 
         textViewId.setText(result.getId() + "");
         textViewTitle.setText(result.getTitle());
@@ -59,28 +56,27 @@ public class DetailsActivity extends AppCompatActivity {
         buttonSave.setText(buttonText);
     }
 
-    //All click listener
-    private void setClickListener(){
+    // all click listener
+    private void setClickListener() {
         buttonSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (buttonText.equalsIgnoreCase("save")){
+                if (buttonText.equalsIgnoreCase("save")) {
                     SharedPreferences.Editor editor = getSharedPreferences(TABLE, MODE_PRIVATE).edit();
                     Gson gson = new Gson();
                     String json = gson.toJson(result);
                     editor.putString(result.getId() + "", json);
                     editor.commit();
-                    Toast.makeText(DetailsActivity.this, "Recipe Saved!!",
-                            Toast.LENGTH_SHORT).show();
-                }
-                else{
-                    SharedPreferences.Editor editor = getSharedPreferences(TABLE,MODE_PRIVATE).edit();
-                    editor.remove(results.getId() + "").commit();
-                    Toast.makeText(DetailsActivity.this, "Recipe Deleted!!",
-                            Toast.LENGTH_SHORT).show();
+                    Toast.makeText(DetailsActivity.this, "Recipe Saved!!", Toast.LENGTH_SHORT).show();
+
+                } else {
+                    SharedPreferences.Editor editor = getSharedPreferences(TABLE, MODE_PRIVATE).edit();
+                    editor.remove(result.getId() + "").commit();
+                    Toast.makeText(DetailsActivity.this, "Recipe Deleted!!", Toast.LENGTH_SHORT).show();
                 }
                 finish();
             }
         });
     }
+
 }
